@@ -8,8 +8,29 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
-	android:background="@drawable/bg_nova_hero"
+	android:background="@color/background_app"
 	>
+
+	<ImageView
+		android:id="@+id/nova_hero_artwork"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:scaleType="centerCrop"
+		android:src="@drawable/bg_nova_artwork"
+		android:contentDescription="@null"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<View
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:background="@drawable/bg_nova_scrim"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
 
 	<TextView
 		android:id="@+id/nova_hero_title"
