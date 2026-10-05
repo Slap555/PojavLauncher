@@ -3,13 +3,18 @@
     <color name="control_button_color">#4CC4C4C4</color>
     <color name="control_button_pressed_color">#4D000000</color>
 
-    <color name="minebutton_color">#57CC33</color>
-    <color name="background_app">#181818</color>
+    <!-- Nova Studio brand accent (violet/neon) -->
+    <color name="minebutton_color">#A855F7</color>
+    <color name="nova_accent">#A855F7</color>
+    <color name="nova_accent_dark">#7C3AED</color>
+    <color name="nova_accent_glow">#C084FC</color>
+
+    <color name="background_app">#0D0A14</color>
     <color name="divider">@color/background_overlay</color>
-    <color name="background_overlay">#464646</color>
-    <color name="background_status_bar">#242424</color>
-    <color name="background_bottom_bar">#232323</color>
+    <color name="background_overlay">#2A2238</color>
+    <color name="background_status_bar">#0A0712</color>
+    <color name="background_bottom_bar">#150F20</color>
 
     <color name="primary_text">#FFFFFF</color>
-    <color name="secondary_text">#B2B2B2</color>
+    <color name="secondary_text">#C7B8DE</color>
 </resources>
