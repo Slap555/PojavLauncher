@@ -36,27 +36,30 @@
 		android:id="@+id/nova_hero_title"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="@dimen/padding_heavy"
 		android:text="@string/app_short_name"
 		android:textAllCaps="true"
 		android:textColor="@color/primary_text"
-		android:textSize="30sp"
+		android:textSize="36sp"
 		android:textStyle="bold"
 		android:letterSpacing="0.06"
 		android:fontFamily="sans-serif-black"
 		android:shadowColor="@color/nova_accent_glow"
 		android:shadowDx="0"
 		android:shadowDy="0"
-		android:shadowRadius="20"
+		android:shadowRadius="24"
 		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/play_button"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintEnd_toEndOf="parent" />
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintVertical_bias="0.46" />
 
+	<!-- Kept in the layout (hidden) so profile selection still resolves automatically for Play;
+	     not shown to players, this is a single-version event build. -->
 	<ScrollView
+		android:visibility="gone"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:layout_marginTop="@dimen/padding_large"
-		app:layout_constraintTop_toBottomOf="@id/nova_hero_title"
+		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintBottom_toTopOf="@id/mc_version_spinner">
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
@@ -131,6 +134,7 @@
 
 	<com.kdt.mcgui.mcVersionSpinner
 		android:id="@+id/mc_version_spinner"
+		android:visibility="gone"
 		android:layout_width="0dp"
 		android:layout_height="@dimen/_52sdp"
 		android:background="@android:color/transparent"
@@ -147,6 +151,7 @@
 
 	<ImageButton
 		android:id="@+id/edit_profile_button"
+		android:visibility="gone"
 		android:layout_width="@dimen/_52sdp"
 		android:layout_height="@dimen/_52sdp"
 		android:background="?android:attr/selectableItemBackground"
@@ -160,6 +165,7 @@
 	<!-- This view is for cosmetic purpose only -->
 	<View
 		android:id="@+id/_background_display_view"
+		android:visibility="gone"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		android:background="#D0150F20"
@@ -170,15 +176,19 @@
 
 	<com.kdt.mcgui.MineButton
 		android:id="@+id/play_button"
-		android:layout_width="match_parent"
-		android:layout_height="@dimen/_62sdp"
+		android:layout_width="0dp"
+		android:layout_height="@dimen/_66sdp"
 
-		android:layout_marginHorizontal="@dimen/_17sdp"
-		android:layout_marginBottom="@dimen/_15sdp"
+		android:layout_marginHorizontal="@dimen/_28sdp"
+		android:layout_marginBottom="@dimen/_48sdp"
 
+		android:textSize="@dimen/_16ssp"
+		android:letterSpacing="0.08"
 		android:textAllCaps="true"
 		android:text="@string/main_play"
 		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
 		/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
