@@ -34,7 +34,12 @@ jobs:
           cd app_pojavlauncher/libs
           wget https://github.com/PojavLauncherTeam/LTW/releases/latest/download/ltw-release.aar
 
+      # android-openjdk-build-multiarch is archived upstream and its old workflow
+      # artifacts have expired, so these JRE downloads are expected to fail.
+      # Don't let that block the build: the app downloads its Java runtime
+      # component on first launch anyway when it isn't bundled in the APK.
       - name: Get JRE 8
+        continue-on-error: true
         uses: dawidd6/action-download-artifact@v9
         with:
           workflow: build.yml
@@ -45,6 +50,7 @@ jobs:
           name: jre8-pojav
 
       - name: Get JRE17
+        continue-on-error: true
         uses: dawidd6/action-download-artifact@v9
         with:
           workflow: build.yml
@@ -55,6 +61,7 @@ jobs:
           name: jre17-pojav
 
       - name: Get JRE21
+        continue-on-error: true
         uses: dawidd6/action-download-artifact@v9
         with:
           workflow: build.yml
@@ -96,9 +103,9 @@ jobs:
 
       - name: Build APK without runtime
         run: |
-          rm -r app_pojavlauncher/src/main/assets/components/jre
-          rm -r app_pojavlauncher/src/main/assets/components/jre-new
-          rm -r app_pojavlauncher/src/main/assets/components/jre-21
+          rm -rf app_pojavlauncher/src/main/assets/components/jre
+          rm -rf app_pojavlauncher/src/main/assets/components/jre-new
+          rm -rf app_pojavlauncher/src/main/assets/components/jre-21
           gradle assembleDebug
           mv app_pojavlauncher/build/outputs/apk/debug/app_pojavlauncher-debug.apk out/app-debug-noruntime.apk
       - name: Gen md5sums
